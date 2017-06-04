@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ItemNavView" customModule="iOSToDoApp" customModuleProvider="target">
+            <connections>
+                <outlet property="icon" destination="ibF-aG-r97" id="e2F-P7-Iuv"/>
+                <outlet property="label_count" destination="rvE-0W-bE5" id="sN0-rA-HWi"/>
+                <outlet property="label_name" destination="mcw-Jd-SMv" id="Thq-Dm-1kq"/>
+                <outlet property="view" destination="iN0-l3-epB" id="JWR-h5-bEh"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="275" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Q63-uG-65x">
+                    <rect key="frame" x="0.0" y="0.0" width="275" height="42"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_home" translatesAutoresizingMaskIntoConstraints="NO" id="ibF-aG-r97">
+                            <rect key="frame" x="0.0" y="0.0" width="22" height="42"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="22" id="oXd-mH-DUu"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Home" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcw-Jd-SMv">
+                            <rect key="frame" x="32" y="0.0" width="229" height="42"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvE-0W-bE5">
+                            <rect key="frame" x="271" y="0.0" width="4" height="42"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eMu-YC-3Zk">
+                    <rect key="frame" x="0.0" y="49" width="275" height="1"/>
+                    <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="iiT-eH-qxw"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.72886490820000005" green="0.4685695171" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="eMu-YC-3Zk" secondAttribute="trailing" id="4A8-AE-wQW"/>
+                <constraint firstItem="eMu-YC-3Zk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Lh1-YH-OFA"/>
+                <constraint firstAttribute="trailing" secondItem="Q63-uG-65x" secondAttribute="trailing" id="TpN-xg-xGj"/>
+                <constraint firstAttribute="bottom" secondItem="Q63-uG-65x" secondAttribute="bottom" constant="8" id="UiA-Bi-Eub"/>
+                <constraint firstItem="Q63-uG-65x" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="WsB-Ov-gYa"/>
+                <constraint firstItem="Q63-uG-65x" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="cqj-Xo-IxL"/>
+                <constraint firstAttribute="bottom" secondItem="eMu-YC-3Zk" secondAttribute="bottom" id="gbL-AS-ge5"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="18.5" y="-428"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_home" width="24" height="21"/>
+    </resources>
+</document>

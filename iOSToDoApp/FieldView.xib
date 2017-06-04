@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FieldView" customModule="iOSToDoApp" customModuleProvider="target">
+            <connections>
+                <outlet property="FieldView" destination="iN0-l3-epB" id="En8-KX-BH6"/>
+                <outlet property="fieldView" destination="iN0-l3-epB" id="mj0-5k-aIs"/>
+                <outlet property="image" destination="IUg-zq-50J" id="WzV-0B-loM"/>
+                <outlet property="textField" destination="RQh-by-5dz" id="PsO-G6-lJK"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ph6-hP-Mhu">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AxH-5O-CuX">
+                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_username" translatesAutoresizingMaskIntoConstraints="NO" id="IUg-zq-50J">
+                                    <rect key="frame" x="20.5" y="20.5" width="19" height="18"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="60" id="NKD-Pb-qEw"/>
+                                <constraint firstItem="IUg-zq-50J" firstAttribute="centerY" secondItem="AxH-5O-CuX" secondAttribute="centerY" id="o4W-Te-1Ud"/>
+                                <constraint firstItem="IUg-zq-50J" firstAttribute="centerX" secondItem="AxH-5O-CuX" secondAttribute="centerX" id="zAL-AD-wSn"/>
+                            </constraints>
+                        </view>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RQh-by-5dz">
+                            <rect key="frame" x="60" y="0.0" width="315" height="60"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                        </textField>
+                    </subviews>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NMN-Du-8cM">
+                    <rect key="frame" x="0.0" y="59" width="375" height="1"/>
+                    <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="5j0-Cc-4aG"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Ph6-hP-Mhu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="2IK-zL-cGl"/>
+                <constraint firstItem="Ph6-hP-Mhu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="GO5-bS-x0L"/>
+                <constraint firstAttribute="trailing" secondItem="NMN-Du-8cM" secondAttribute="trailing" id="fRO-6U-EYv"/>
+                <constraint firstAttribute="bottom" secondItem="Ph6-hP-Mhu" secondAttribute="bottom" id="pOZ-hD-GC0"/>
+                <constraint firstAttribute="bottom" secondItem="NMN-Du-8cM" secondAttribute="bottom" id="s30-bm-i0O"/>
+                <constraint firstAttribute="trailing" secondItem="Ph6-hP-Mhu" secondAttribute="trailing" id="uav-Ia-hTT"/>
+                <constraint firstItem="NMN-Du-8cM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="vdR-4T-6Hv"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-43.5" y="-268"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_username" width="19" height="18"/>
+    </resources>
+</document>
