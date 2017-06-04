@@ -14,7 +14,23 @@ class AppCoordinator: Coordinator {
         //handle first activity to start
         //check if user is logged
         if (UserDefaults.standard.value(forKey: "logged") != nil) {
-            
+            showHomeCoordinator()
+        } else {
+            LoginCoordinator(navigation).start()
         }
+    }
+}
+
+extension AppCoordinator: DidFinishHomCoordinator {
+    func showHomeCoordinator() {
+        HomeCoordinator(navigation).start()
+    }
+    func didFinishHomCoordinator() {
+        
+    }
+}
+extension AppCoordinator {
+    func showSignupCoordinator() {
+        SignupCoordinator(navigation).start()
     }
 }

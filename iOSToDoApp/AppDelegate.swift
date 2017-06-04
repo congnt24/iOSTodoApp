@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.sharedManager().enable = true
         //init coordinator
         let navigation = UINavigationController()
+        navigation.navigationBar.isHidden = true
         let appCoor = AppCoordinator(navigation, window)
         appCoor.start()
         window?.rootViewController = navigation

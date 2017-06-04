@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1843AC5B1EE2551F003811FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1843AC5A1EE2551F003811FD /* AppDelegate.swift */; };
-		1843AC5D1EE2551F003811FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1843AC5C1EE2551F003811FD /* ViewController.swift */; };
 		1843AC601EE2551F003811FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1843AC5E1EE2551F003811FD /* Main.storyboard */; };
 		1843AC621EE2551F003811FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1843AC611EE2551F003811FD /* Assets.xcassets */; };
 		1843AC651EE2551F003811FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1843AC631EE2551F003811FD /* LaunchScreen.storyboard */; };
@@ -26,13 +25,20 @@
 		18DAC6401EE41859008DF7BF /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DAC63F1EE41859008DF7BF /* AppCoordinator.swift */; };
 		18DAC6421EE41AC7008DF7BF /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DAC6411EE41AC7008DF7BF /* HomeCoordinator.swift */; };
 		18DAC6441EE41AD2008DF7BF /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DAC6431EE41AD2008DF7BF /* LoginCoordinator.swift */; };
+		18DAC6461EE41D51008DF7BF /* SignupCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DAC6451EE41D51008DF7BF /* SignupCoordinator.swift */; };
+		18DAC6491EE41EEA008DF7BF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DAC6481EE41EEA008DF7BF /* LoginViewController.swift */; };
+		18DAC64B1EE41FE4008DF7BF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DAC64A1EE41FE4008DF7BF /* HomeViewController.swift */; };
+		18DAC64E1EE4216D008DF7BF /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DAC64D1EE4216D008DF7BF /* LoginViewModel.swift */; };
+		18DAC6501EE435B1008DF7BF /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DAC64F1EE435B1008DF7BF /* SignupViewController.swift */; };
+		18DAC6521EE43609008DF7BF /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DAC6511EE43609008DF7BF /* SignupViewModel.swift */; };
+		18DAC6541EE437AE008DF7BF /* AddNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DAC6531EE437AE008DF7BF /* AddNewViewController.swift */; };
+		18DAC6561EE438F2008DF7BF /* NavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DAC6551EE438F2008DF7BF /* NavViewController.swift */; };
 		1EEBD31B05F506952B662647 /* Pods_iOSToDoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D322B696BFE7B46DDA06257D /* Pods_iOSToDoApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1843AC571EE2551F003811FD /* iOSToDoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSToDoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1843AC5A1EE2551F003811FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1843AC5C1EE2551F003811FD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1843AC5F1EE2551F003811FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1843AC611EE2551F003811FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1843AC641EE2551F003811FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +57,14 @@
 		18DAC63F1EE41859008DF7BF /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		18DAC6411EE41AC7008DF7BF /* HomeCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		18DAC6431EE41AD2008DF7BF /* LoginCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		18DAC6451EE41D51008DF7BF /* SignupCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupCoordinator.swift; sourceTree = "<group>"; };
+		18DAC6481EE41EEA008DF7BF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		18DAC64A1EE41FE4008DF7BF /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		18DAC64D1EE4216D008DF7BF /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		18DAC64F1EE435B1008DF7BF /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		18DAC6511EE43609008DF7BF /* SignupViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
+		18DAC6531EE437AE008DF7BF /* AddNewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewViewController.swift; sourceTree = "<group>"; };
+		18DAC6551EE438F2008DF7BF /* NavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavViewController.swift; sourceTree = "<group>"; };
 		675A4EADE9F1D2406FFE6358 /* Pods-iOSToDoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSToDoApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSToDoApp/Pods-iOSToDoApp.release.xcconfig"; sourceTree = "<group>"; };
 		7590E0A4894C4F015FA48A76 /* Pods-iOSToDoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSToDoApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSToDoApp/Pods-iOSToDoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		D322B696BFE7B46DDA06257D /* Pods_iOSToDoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSToDoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,10 +112,11 @@
 		1843AC591EE2551F003811FD /* iOSToDoApp */ = {
 			isa = PBXGroup;
 			children = (
+				18DAC64C1EE4215D008DF7BF /* ViewModel */,
+				18DAC6471EE41EBC008DF7BF /* ViewController */,
 				18DAC63C1EE4168A008DF7BF /* Coordinator */,
 				18DAC6271EE3B5EF008DF7BF /* CustomViews */,
 				1843AC5A1EE2551F003811FD /* AppDelegate.swift */,
-				1843AC5C1EE2551F003811FD /* ViewController.swift */,
 				1843AC5E1EE2551F003811FD /* Main.storyboard */,
 				1843AC611EE2551F003811FD /* Assets.xcassets */,
 				1843AC631EE2551F003811FD /* LaunchScreen.storyboard */,
@@ -134,8 +149,30 @@
 				18DAC63F1EE41859008DF7BF /* AppCoordinator.swift */,
 				18DAC6411EE41AC7008DF7BF /* HomeCoordinator.swift */,
 				18DAC6431EE41AD2008DF7BF /* LoginCoordinator.swift */,
+				18DAC6451EE41D51008DF7BF /* SignupCoordinator.swift */,
 			);
 			name = Coordinator;
+			sourceTree = "<group>";
+		};
+		18DAC6471EE41EBC008DF7BF /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				18DAC6481EE41EEA008DF7BF /* LoginViewController.swift */,
+				18DAC64A1EE41FE4008DF7BF /* HomeViewController.swift */,
+				18DAC64F1EE435B1008DF7BF /* SignupViewController.swift */,
+				18DAC6531EE437AE008DF7BF /* AddNewViewController.swift */,
+				18DAC6551EE438F2008DF7BF /* NavViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		18DAC64C1EE4215D008DF7BF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				18DAC64D1EE4216D008DF7BF /* LoginViewModel.swift */,
+				18DAC6511EE43609008DF7BF /* SignupViewModel.swift */,
+			);
+			name = ViewModel;
 			sourceTree = "<group>";
 		};
 		BF9078F5CA781732F59A4B76 /* Frameworks */ = {
@@ -275,16 +312,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18DAC6541EE437AE008DF7BF /* AddNewViewController.swift in Sources */,
 				18DAC63E1EE4169A008DF7BF /* Coordinator.swift in Sources */,
-				1843AC5D1EE2551F003811FD /* ViewController.swift in Sources */,
 				18DAC6371EE3E09A008DF7BF /* ItemToDoView.swift in Sources */,
+				18DAC6521EE43609008DF7BF /* SignupViewModel.swift in Sources */,
+				18DAC6561EE438F2008DF7BF /* NavViewController.swift in Sources */,
 				18DAC63A1EE3F820008DF7BF /* HomeTableViewCell.swift in Sources */,
+				18DAC6461EE41D51008DF7BF /* SignupCoordinator.swift in Sources */,
+				18DAC64B1EE41FE4008DF7BF /* HomeViewController.swift in Sources */,
 				18DAC6441EE41AD2008DF7BF /* LoginCoordinator.swift in Sources */,
+				18DAC64E1EE4216D008DF7BF /* LoginViewModel.swift in Sources */,
 				18DAC6241EE3AB22008DF7BF /* FieldView.swift in Sources */,
 				18DAC6311EE3C499008DF7BF /* ItemPickerView.swift in Sources */,
 				18DAC6401EE41859008DF7BF /* AppCoordinator.swift in Sources */,
 				18DAC6421EE41AC7008DF7BF /* HomeCoordinator.swift in Sources */,
 				1843AC5B1EE2551F003811FD /* AppDelegate.swift in Sources */,
+				18DAC6501EE435B1008DF7BF /* SignupViewController.swift in Sources */,
+				18DAC6491EE41EEA008DF7BF /* LoginViewController.swift in Sources */,
 				18DAC62B1EE3B630008DF7BF /* ItemNavView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,7 +14,7 @@
         <!--Login-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="login" title="Login" id="BYZ-38-t0r" customClass="ViewController" customModule="iOSToDoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" title="Login" id="BYZ-38-t0r" customClass="LoginViewController" customModule="iOSToDoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -54,9 +54,6 @@
                                                         <state key="normal" title="Sign In" backgroundImage="button_bg">
                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
-                                                        <connections>
-                                                            <segue destination="YCe-py-L77" kind="show" id="JAq-Sy-kkM"/>
-                                                        </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="egD-bo-L8C" customClass="FieldView" customModule="iOSToDoApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="51.5" width="280" height="52"/>
@@ -94,9 +91,6 @@
                                                 <state key="normal" title="Create Account">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
-                                                <connections>
-                                                    <segue destination="aLC-5L-OSW" kind="show" id="cES-AZ-6uV"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQm-On-BIL">
                                                 <rect key="frame" x="189" y="534" width="115" height="14"/>
@@ -154,6 +148,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="sQK-VH-vZ0"/>
+                    <connections>
+                        <outlet property="btnSignIn" destination="Pmt-c9-uS9" id="hwN-jm-H3D"/>
+                        <outlet property="btnSignUp" destination="dUG-5m-aaI" id="a9i-bJ-48z"/>
+                        <outlet property="fieldPassword" destination="egD-bo-L8C" id="Cvw-T9-GHO"/>
+                        <outlet property="fieldUsername" destination="XJ3-OJ-PV3" id="Vcz-2y-qXw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -162,7 +162,7 @@
         <!--Left Menu-->
         <scene sceneID="unu-Ht-nYy">
             <objects>
-                <viewController storyboardIdentifier="nav" title="Left Menu" id="tgf-jH-yai" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="nav" title="Left Menu" id="tgf-jH-yai" customClass="NavViewController" customModule="iOSToDoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PjH-0b-BJ7"/>
                         <viewControllerLayoutGuide type="bottom" id="wcw-Ry-Qib"/>
@@ -181,16 +181,8 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem id="Ujv-Ih-rdu">
-                                        <barButtonItem key="leftBarButtonItem" image="icon_close" id="0IP-n8-QzF">
-                                            <connections>
-                                                <segue destination="YCe-py-L77" kind="show" id="sIB-7N-SaG"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" image="icon_logout" id="J82-Dh-7rg">
-                                            <connections>
-                                                <segue destination="BYZ-38-t0r" kind="show" id="Qhc-tV-vc2"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <barButtonItem key="leftBarButtonItem" image="icon_close" id="0IP-n8-QzF"/>
+                                        <barButtonItem key="rightBarButtonItem" image="icon_logout" id="J82-Dh-7rg"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -291,6 +283,10 @@
                             <constraint firstItem="aWg-Vr-PPo" firstAttribute="centerX" secondItem="ff5-pm-L7T" secondAttribute="centerX" id="zcM-Ls-gma"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnClose" destination="0IP-n8-QzF" id="7bn-wN-HmY"/>
+                        <outlet property="btnSignout" destination="J82-Dh-7rg" id="wlE-2f-tC9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UO2-Y5-Iku" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -299,7 +295,7 @@
         <!--Home-->
         <scene sceneID="UyH-cu-OT0">
             <objects>
-                <viewController storyboardIdentifier="home" title="Home" id="YCe-py-L77" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="home" title="Home" id="YCe-py-L77" customClass="HomeViewController" customModule="iOSToDoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bSJ-z3-yf6"/>
                         <viewControllerLayoutGuide type="bottom" id="5Zf-v0-zPS"/>
@@ -419,7 +415,7 @@
         <!--SignUp-->
         <scene sceneID="mYE-eP-8Jv">
             <objects>
-                <viewController storyboardIdentifier="signup" title="SignUp" automaticallyAdjustsScrollViewInsets="NO" id="aLC-5L-OSW" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signup" title="SignUp" automaticallyAdjustsScrollViewInsets="NO" id="aLC-5L-OSW" customClass="SignupViewController" customModule="iOSToDoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Z1p-7e-Kdn"/>
                         <viewControllerLayoutGuide type="bottom" id="dWu-KH-MRs"/>
@@ -454,11 +450,7 @@
                                                         </textAttributes>
                                                         <items>
                                                             <navigationItem title="Create Account" id="hmM-tO-Yqu">
-                                                                <barButtonItem key="leftBarButtonItem" image="icon_back" id="d8w-Ug-3x4">
-                                                                    <connections>
-                                                                        <segue destination="BYZ-38-t0r" kind="show" id="tWg-9F-1dA"/>
-                                                                    </connections>
-                                                                </barButtonItem>
+                                                                <barButtonItem key="leftBarButtonItem" image="icon_back" id="d8w-Ug-3x4"/>
                                                                 <barButtonItem key="rightBarButtonItem" image="icon_check" id="Dh9-QP-Jwn">
                                                                     <connections>
                                                                         <segue destination="YCe-py-L77" kind="show" id="BVn-GR-AEs"/>
@@ -576,15 +568,18 @@
                             <constraint firstItem="X0m-PZ-gpt" firstAttribute="width" secondItem="16M-Qz-Rgz" secondAttribute="width" id="vua-5G-qS1"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="back" destination="d8w-Ug-3x4" id="Jxx-jF-Nkl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i5V-O3-Lbu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="855" y="-1150"/>
+            <point key="canvasLocation" x="1733" y="-1192"/>
         </scene>
         <!--AddNew-->
         <scene sceneID="8eI-O9-T9J">
             <objects>
-                <viewController storyboardIdentifier="addnew" title="AddNew" id="seS-X3-83q" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addnew" title="AddNew" id="seS-X3-83q" customClass="AddNewViewController" customModule="iOSToDoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ATF-sI-2z5"/>
                         <viewControllerLayoutGuide type="bottom" id="w1r-As-W4b"/>
@@ -607,16 +602,8 @@
                                         </textAttributes>
                                         <items>
                                             <navigationItem title="Add New" id="P2w-a3-A9u">
-                                                <barButtonItem key="leftBarButtonItem" image="icon_close" id="WOw-qf-Pdf">
-                                                    <connections>
-                                                        <segue destination="YCe-py-L77" kind="show" id="DeE-Sa-VVr"/>
-                                                    </connections>
-                                                </barButtonItem>
-                                                <barButtonItem key="rightBarButtonItem" image="icon_check" id="6nM-8P-OQo">
-                                                    <connections>
-                                                        <segue destination="YCe-py-L77" kind="show" id="WGe-ju-CqA"/>
-                                                    </connections>
-                                                </barButtonItem>
+                                                <barButtonItem key="leftBarButtonItem" image="icon_close" id="WOw-qf-Pdf"/>
+                                                <barButtonItem key="rightBarButtonItem" image="icon_check" id="6nM-8P-OQo"/>
                                             </navigationItem>
                                         </items>
                                     </navigationBar>
@@ -729,6 +716,10 @@
                             <constraint firstAttribute="trailing" secondItem="Y9E-ax-3Zb" secondAttribute="trailing" id="eqa-z0-5q8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnClose" destination="WOw-qf-Pdf" id="BSO-rc-jGz"/>
+                        <outlet property="btnDone" destination="6nM-8P-OQo" id="D2z-Lx-Qtv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fSp-ld-K1x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -737,6 +728,7 @@
         <!--Navigation Controller-->
         <scene sceneID="8aY-kC-maA">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="chU-PD-8mL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Sev-Qh-uBC" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Ql-v0-cae">
@@ -752,7 +744,6 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="9fa-V0-qDO"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="chU-PD-8mL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-82.400000000000006" y="-355.7721139430285"/>
         </scene>
@@ -784,8 +775,4 @@
         <image name="icon_username" width="19" height="18"/>
         <image name="logo" width="100" height="77"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="WGe-ju-CqA"/>
-        <segue reference="Qhc-tV-vc2"/>
-    </inferredMetricsTieBreakers>
 </document>
