@@ -48,24 +48,14 @@
                     <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="neP-Oy-0L7">
-                    <rect key="frame" x="0.0" y="79" width="375" height="1"/>
-                    <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="1" id="oV4-In-5Nu"/>
-                    </constraints>
-                </view>
             </subviews>
             <constraints>
                 <constraint firstItem="KiP-Xx-r4c" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="59Y-An-ZDg"/>
-                <constraint firstAttribute="bottom" secondItem="neP-Oy-0L7" secondAttribute="bottom" id="7To-C1-xFd"/>
                 <constraint firstAttribute="bottom" secondItem="KiP-Xx-r4c" secondAttribute="bottom" id="IdT-0i-LY3"/>
-                <constraint firstAttribute="trailing" secondItem="neP-Oy-0L7" secondAttribute="trailing" id="JNX-K9-yDC"/>
                 <constraint firstAttribute="trailing" secondItem="Kma-mo-Rwo" secondAttribute="trailing" id="MBT-Lh-J2Q"/>
                 <constraint firstItem="KiP-Xx-r4c" firstAttribute="top" secondItem="Kma-mo-Rwo" secondAttribute="bottom" id="NGA-WN-C6M"/>
                 <constraint firstItem="Kma-mo-Rwo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="T8S-gh-iX2"/>
                 <constraint firstItem="Kma-mo-Rwo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="UBb-c6-LIi"/>
-                <constraint firstItem="neP-Oy-0L7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ce1-Um-fvP"/>
                 <constraint firstAttribute="trailing" secondItem="KiP-Xx-r4c" secondAttribute="trailing" id="dOw-i1-guL"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>

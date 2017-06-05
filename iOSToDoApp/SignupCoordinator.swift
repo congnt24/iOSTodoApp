@@ -12,7 +12,7 @@ import UIKit
 class SignupCoordinator: Coordinator {
     override func start() {
         let signup = mainStoryboard.instantiateViewController(withIdentifier: "signup")
-        
+
         navigation?.pushViewController(signup, animated: true)
     }
 }

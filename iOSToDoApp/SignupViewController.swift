@@ -13,7 +13,7 @@ import RxCocoa
 class SignupViewController: UIViewController {
 
     @IBOutlet weak var back: UIBarButtonItem!
-    
+
     let bag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,7 @@ class SignupViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
 
     /*
     // MARK: - Navigation

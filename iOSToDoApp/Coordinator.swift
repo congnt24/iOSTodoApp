@@ -15,13 +15,13 @@ class Coordinator {
     var window: UIWindow?
     //must init storyboard in AppDelegate
     var mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-    
+
     init(_ navigation: UINavigationController?, _ window: UIWindow? = nil) {
         self.window = window
         self.navigation = navigation
     }
-    
+
     func start() {
-        
+
     }
 }

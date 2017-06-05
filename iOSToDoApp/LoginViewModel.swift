@@ -19,11 +19,11 @@ class LoginViewModel {
     //Output
     //example: is enable signin button, we use driver of observalbe. Driver is observable with relay = 1, and retry = 3?? i'm not sure.
     var enableSignin: Driver<Bool>
-    
+
     //RX
     var bag = DisposeBag()
     init(delegate: LoginCoordinatorDelegate!
-) {
+    ) {
         //Observable<Bool>
         enableSignin = Observable.combineLatest(username.asObservable(), password.asObservable()) { (user, pass) -> Bool in
             return user.characters.count > 0 && pass.characters.count > 0
@@ -32,5 +32,5 @@ class LoginViewModel {
         btnSignin.asObservable().skip(1).subscribe(onNext: { delegate.showHome() }).addDisposableTo(bag)
         btnSignup.asObservable().skip(1).subscribe(onNext: { delegate.showSignup() }).addDisposableTo(bag)
     }
-    
+
 }

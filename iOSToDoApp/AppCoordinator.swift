@@ -26,7 +26,7 @@ extension AppCoordinator: DidFinishHomCoordinator {
         HomeCoordinator(navigation).start()
     }
     func didFinishHomCoordinator() {
-        
+
     }
 }
 extension AppCoordinator {

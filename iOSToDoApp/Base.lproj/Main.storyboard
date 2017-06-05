@@ -377,9 +377,6 @@
                                             <constraint firstAttribute="height" constant="55" id="tqF-KW-L9r"/>
                                         </constraints>
                                         <state key="normal" image="icon_add"/>
-                                        <connections>
-                                            <segue destination="seS-X3-83q" kind="show" id="jZw-YM-hfj"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -407,6 +404,13 @@
                             <constraint firstAttribute="trailing" secondItem="Jkc-OL-HrR" secondAttribute="trailing" id="xM9-nJ-cpw"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnAdd" destination="qq6-cu-d1W" id="ffX-s0-imU"/>
+                        <outlet property="lblDate" destination="8Pf-hh-cFj" id="PBG-cS-NzX"/>
+                        <outlet property="lblDay" destination="jZb-Ni-k6x" id="rg6-Xn-rLo"/>
+                        <outlet property="rightBar" destination="5SO-sl-IAi" id="JaJ-ir-r8h"/>
+                        <outlet property="tableView" destination="p1p-3Z-shn" id="hZD-bV-kDM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cx9-iM-qYr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -719,16 +723,17 @@
                     <connections>
                         <outlet property="btnClose" destination="WOw-qf-Pdf" id="BSO-rc-jGz"/>
                         <outlet property="btnDone" destination="6nM-8P-OQo" id="D2z-Lx-Qtv"/>
+                        <outlet property="labelDesc" destination="9Um-gs-sIw" id="aUQ-Ea-wvR"/>
+                        <outlet property="labelTitle" destination="Hrl-qb-keo" id="DwH-eb-q21"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fSp-ld-K1x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3084" y="-357"/>
+            <point key="canvasLocation" x="2543" y="-357"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8aY-kC-maA">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="chU-PD-8mL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Sev-Qh-uBC" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Ql-v0-cae">
@@ -744,6 +749,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="9fa-V0-qDO"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="chU-PD-8mL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-82.400000000000006" y="-355.7721139430285"/>
         </scene>

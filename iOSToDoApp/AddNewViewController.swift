@@ -13,34 +13,19 @@ class AddNewViewController: UIViewController {
 
     @IBOutlet weak var btnDone: UIBarButtonItem!
     @IBOutlet weak var btnClose: UIBarButtonItem!
-    
+    @IBOutlet weak var labelTitle: UILabel!
+    @IBOutlet weak var labelDesc: UILabel!
+    var viewModel: AddNewViewModel!
+
     let bag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        btnClose.rx.tap.subscribe(onNext: {
-            self.navigationController?.popViewController(animated: true)
-        }).addDisposableTo(bag)
-        btnDone.rx.tap.subscribe(onNext: {
-            self.navigationController?.popViewController(animated: true)
-        }).addDisposableTo(bag)
         // Do any additional setup after loading the view.
+
+        btnClose.rx.tap.subscribe(onNext: {
+            print("SADasd")
+            self.navigationController?.popViewController(animated: true)
+        }).addDisposableTo(bag)
+        btnDone.rx.tap.bind(to: viewModel.tapDone).addDisposableTo(bag)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
