@@ -9,8 +9,8 @@
 import UIKit
 
 class ItemPickerView: UIView {
-
-
+    
+    
     @IBOutlet weak var label_title: UILabel!
 
     @IBOutlet weak var label_value: UILabel!
@@ -54,19 +54,21 @@ class ItemPickerView: UIView {
 //        view.perform(#selector("showInputDialog:"))//error
     }
     
+    var comp: ((String)->Void)?
     
     func showInputDialog(_ sender: UITapGestureRecognizer){
-        let dialog = UIAlertController(title: "\(title!)", message: "Please enter \(title!)", preferredStyle: .alert)
-        dialog.addTextField { (textField) in
-            textField.placeholder = "\(self.title!)"
-        }
-        let ok = UIAlertAction(title: "OK", style: .default) { _ in
-            self.value = dialog.textFields?[0].text
-        }
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        dialog.addAction(ok)
-        dialog.addAction(cancel)
-        viewController?.present(dialog, animated: true, completion: nil)
+        viewController?.showInputDialog(title!, defaultText: value, label: label_value, onCompletion: comp)
+//        let dialog = UIAlertController(title: "\(title!)", message: "Please enter \(title!)", preferredStyle: .alert)
+//        dialog.addTextField { (textField) in
+//            textField.placeholder = "\(self.title!)"
+//        }
+//        let ok = UIAlertAction(title: "OK", style: .default) { _ in
+//            self.value = dialog.textFields?[0].text
+//        }
+//        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+//        dialog.addAction(ok)
+//        dialog.addAction(cancel)
+//        viewController?.present(dialog, animated: true, completion: nil)
     }
 
 }

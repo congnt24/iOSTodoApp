@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+class SignupViewModel {
+    var delegate: SignupCoordinatorDelegate!
+    
+    init() {
+        
+    }
+}

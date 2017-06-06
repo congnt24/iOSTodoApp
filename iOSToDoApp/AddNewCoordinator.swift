@@ -26,7 +26,5 @@ class AddNewCoordinator: Coordinator {
 extension AddNewCoordinator: AddNewCoordinatorDelegate {
     func backToHomeAndReload() {
         navigation?.popViewController(animated: true)
-        let home = navigation?.topViewController as! HomeViewController
-        home.viewModel.loadData()
     }
 }

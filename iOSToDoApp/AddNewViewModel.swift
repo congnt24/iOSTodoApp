@@ -13,9 +13,9 @@ import RealmSwift
 class AddNewViewModel {
     var delegate: AddNewCoordinatorDelegate!
     //input
-    var title = Variable("title")
-    var desc = Variable("desc")
-    var time = Variable("time")
+    var title: String?
+    var desc: String?
+    var date: String?
 
     var tapDone = PublishSubject<Void>()
     //output
@@ -24,16 +24,28 @@ class AddNewViewModel {
     init() {
         let realm = try! Realm()
         tapDone.asObserver().subscribe(onNext: {
-            //add data to db
-            let item = TodoModel()
-            item.title = self.title.value
-            item.desc = self.desc.value
-            item.time = self.time.value
-            try! realm.write {
-                realm.add(item)
+            //checking valid data
+            if !existNil(strs: self.title, self.desc, self.date) {
+                //add data to db
+                let item = TodoModel()
+                item.title = self.title
+                item.desc = self.desc
+                item.time = self.date
+                try! realm.write {
+                    realm.add(item)
+                }
+                //back to main coordinator
+                self.delegate.backToHomeAndReload()
             }
-            //back to main coordinator
-            self.delegate.backToHomeAndReload()
         }).addDisposableTo(bag)
     }
+}
+
+func existNil(strs: String?...) -> Bool{
+    for str in strs {
+        if str == nil {
+            return true
+        }
+    }
+    return false
 }

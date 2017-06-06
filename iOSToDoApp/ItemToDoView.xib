@@ -18,11 +18,11 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+        <view userInteractionEnabled="NO" contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kma-mo-Rwo">
+                <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kma-mo-Rwo">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="28"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yef-Am-EVI">
@@ -48,15 +48,25 @@
                     <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BS2-sZ-rLD">
+                    <rect key="frame" x="0.0" y="84" width="375" height="1"/>
+                    <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="eCz-PN-OyM"/>
+                    </constraints>
+                </view>
             </subviews>
             <constraints>
                 <constraint firstItem="KiP-Xx-r4c" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="59Y-An-ZDg"/>
-                <constraint firstAttribute="bottom" secondItem="KiP-Xx-r4c" secondAttribute="bottom" id="IdT-0i-LY3"/>
+                <constraint firstAttribute="bottom" secondItem="KiP-Xx-r4c" secondAttribute="bottom" constant="5" id="IdT-0i-LY3"/>
                 <constraint firstAttribute="trailing" secondItem="Kma-mo-Rwo" secondAttribute="trailing" id="MBT-Lh-J2Q"/>
                 <constraint firstItem="KiP-Xx-r4c" firstAttribute="top" secondItem="Kma-mo-Rwo" secondAttribute="bottom" id="NGA-WN-C6M"/>
+                <constraint firstAttribute="bottom" secondItem="BS2-sZ-rLD" secondAttribute="bottom" id="Q8n-ud-lR3"/>
                 <constraint firstItem="Kma-mo-Rwo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="T8S-gh-iX2"/>
                 <constraint firstItem="Kma-mo-Rwo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="UBb-c6-LIi"/>
+                <constraint firstAttribute="trailing" secondItem="BS2-sZ-rLD" secondAttribute="trailing" id="ayQ-YM-krw"/>
                 <constraint firstAttribute="trailing" secondItem="KiP-Xx-r4c" secondAttribute="trailing" id="dOw-i1-guL"/>
+                <constraint firstItem="BS2-sZ-rLD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="eDp-jI-21X"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

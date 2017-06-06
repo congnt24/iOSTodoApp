@@ -58,7 +58,6 @@ class HomeViewController: UIViewController, UITableViewDelegate {
             cell.todoView.title = model.title
             cell.todoView.descriptionView.text = model.desc
             cell.todoView.timeView.text = model.time
-            cell.hideEditView()
         }.addDisposableTo(bag)
         tableView.separatorStyle = .none
         tableView.rx.itemDeleted.bind(to: viewModel.deleteItem).addDisposableTo(bag)
@@ -86,7 +85,6 @@ class HomeViewController: UIViewController, UITableViewDelegate {
             //            if(self.tableView.isEditing) {
             //                cell.showEditView()
             //            } else {
-            cell.hideEditView()
             return cell
         }
         dataSource.canEditRowAtIndexPath = { (ds, ip) in
