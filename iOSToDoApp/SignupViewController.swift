@@ -13,13 +13,17 @@ import RxCocoa
 class SignupViewController: UIViewController {
     @IBOutlet weak var back: UIBarButtonItem!
     @IBOutlet weak var btnDone: UIBarButtonItem!
+    @IBOutlet weak var nameField: FieldView!
+    @IBOutlet weak var emailField: FieldView!
+    @IBOutlet weak var passwordField: FieldView!
+    @IBOutlet weak var birthdayField: FieldView!
+    @IBOutlet weak var genderField: FieldView!
     
     var viewModel: SignupViewModel!
     
     let bag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
-
         back.rx.tap.subscribe(onNext: {
             self.navigationController?.popViewController(animated: true)
         }).addDisposableTo(bag)

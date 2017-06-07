@@ -10,10 +10,9 @@ import UIKit
 
 class ItemPickerView: UIView {
 
-
     @IBOutlet weak var label_title: UILabel!
 
-    @IBOutlet weak var tfValue: UITextField!
+    @IBOutlet weak var tfValue: AwesomeTextField!
     @IBOutlet weak var uiSwitch: UISwitch!
 
     @IBInspectable var title: String? {
@@ -34,6 +33,7 @@ class ItemPickerView: UIView {
             uiSwitch.isHidden = true
         }
     }
+
     @IBInspectable var enableSwitch: Bool {
         get {
             return uiSwitch.isHidden
@@ -46,14 +46,18 @@ class ItemPickerView: UIView {
         }
     }
 
-    @IBInspectable var enableDatePicker: Bool {
-        get {
-            return true
-        }
-        set(value) {
-            setupDatePicker()
+    @IBInspectable var enableDatePicker: Bool = false {
+        didSet {
+            tfValue.enableDatePicker = true
         }
     }
+
+    @IBInspectable var enableTimePicker: Bool = false {
+        didSet {
+            tfValue.enableTimePicker = true
+        }
+    }
+
 
     @IBOutlet var view: UIView!
     required init?(coder aDecoder: NSCoder) {
@@ -75,17 +79,4 @@ class ItemPickerView: UIView {
             tfValue.becomeFirstResponder()
         }
     }
-
-    func setupDatePicker() {
-        let datePicker = UIDatePicker()
-        datePicker.addTarget(self, action: #selector(onDateChange(sender:)), for: UIControlEvents.valueChanged)
-        tfValue.inputView = datePicker
-    }
-
-    func onDateChange(sender: UIDatePicker) {
-        let dateFormater = DateFormatter()
-        dateFormater.setLocalizedDateFormatFromTemplate("yMMMMd")
-        tfValue.text = dateFormater.string(from: sender.date)
-    }
-
 }

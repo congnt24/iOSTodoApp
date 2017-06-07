@@ -16,7 +16,10 @@ class AddNewViewModel {
     //input
     var title = Variable<String?>(nil)
     var desc = Variable<String?>(nil)
-    var date: String?
+    var date = Variable<String?>(nil)
+    var time = Variable<String?>(nil)
+    var location = Variable<String?>(nil)
+    var allday = Variable<Bool>(false)
 
     var tapDone = PublishSubject<Void>()
     //output
@@ -30,7 +33,6 @@ class AddNewViewModel {
             return $0!.characters.count > 0 && $1!.characters.count > 0
         }.asDriver(onErrorJustReturn: false)
         
-        
         let realm = try! Realm()
         tapDone.asObserver().subscribe(onNext: {
             //checking valid data
@@ -38,6 +40,10 @@ class AddNewViewModel {
             let item = TodoModel()
             item.title = self.title.value
             item.desc = self.desc.value
+            item.date = self.date.value
+            item.time = self.time.value
+            item.allDay = self.allday.value
+            item.location = self.location.value
             try! realm.write {
                 realm.add(item)
             }

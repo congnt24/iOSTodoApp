@@ -39,7 +39,7 @@
                                 <constraint firstItem="IUg-zq-50J" firstAttribute="centerX" secondItem="AxH-5O-CuX" secondAttribute="centerX" id="zAL-AD-wSn"/>
                             </constraints>
                         </view>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RQh-by-5dz">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RQh-by-5dz" customClass="AwesomeTextField" customModule="iOSToDoApp" customModuleProvider="target">
                             <rect key="frame" x="60" y="0.0" width="315" height="60"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>

@@ -12,6 +12,7 @@
 		1843AC621EE2551F003811FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1843AC611EE2551F003811FD /* Assets.xcassets */; };
 		1843AC651EE2551F003811FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1843AC631EE2551F003811FD /* LaunchScreen.storyboard */; };
 		18A45C981EE59F9300B89E98 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A45C971EE59F9300B89E98 /* ViewControllerExtension.swift */; };
+		18CDDE081EE8073300893C20 /* AwesomeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CDDE071EE8073300893C20 /* AwesomeTextField.swift */; };
 		18DAC6241EE3AB22008DF7BF /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DAC6231EE3AB22008DF7BF /* FieldView.swift */; };
 		18DAC6261EE3AB2E008DF7BF /* FieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DAC6251EE3AB2E008DF7BF /* FieldView.xib */; };
 		18DAC62B1EE3B630008DF7BF /* ItemNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DAC62A1EE3B630008DF7BF /* ItemNavView.swift */; };
@@ -51,6 +52,7 @@
 		1843AC641EE2551F003811FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1843AC661EE2551F003811FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18A45C971EE59F9300B89E98 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		18CDDE071EE8073300893C20 /* AwesomeTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeTextField.swift; sourceTree = "<group>"; };
 		18DAC6231EE3AB22008DF7BF /* FieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldView.swift; sourceTree = "<group>"; };
 		18DAC6251EE3AB2E008DF7BF /* FieldView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FieldView.xib; sourceTree = "<group>"; };
 		18DAC62A1EE3B630008DF7BF /* ItemNavView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemNavView.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				18DAC6341EE3E08C008DF7BF /* ItemToDoView.xib */,
 				18DAC65C1EE46252008DF7BF /* HomeTableViewCell.swift */,
 				18DAC65D1EE46252008DF7BF /* HomeTableViewCell.xib */,
+				18CDDE071EE8073300893C20 /* AwesomeTextField.swift */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				18DAC6241EE3AB22008DF7BF /* FieldView.swift in Sources */,
 				18DAC6311EE3C499008DF7BF /* ItemPickerView.swift in Sources */,
 				18DAC6401EE41859008DF7BF /* AppCoordinator.swift in Sources */,
+				18CDDE081EE8073300893C20 /* AwesomeTextField.swift in Sources */,
 				18DAC6631EE51C60008DF7BF /* AddNewCoordinator.swift in Sources */,
 				18DAC6421EE41AC7008DF7BF /* HomeCoordinator.swift in Sources */,
 				18DAC6661EE58497008DF7BF /* TodoRepository.swift in Sources */,

@@ -11,5 +11,5 @@ target 'iOSToDoApp' do
   pod 'RxDataSources'
   pod 'IQKeyboardManager'
   pod 'RealmSwift'
-  pod 'RxRealm'
+  pod 'RxRealm', :inhibit_warnings => true
 end

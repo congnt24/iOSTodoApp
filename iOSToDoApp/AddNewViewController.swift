@@ -50,6 +50,10 @@ class AddNewViewController: UIViewController {
         tfTitle.rx.text.bind(to: viewModel.title).addDisposableTo(bag)
         tfDesc.rx.text.bind(to: viewModel.desc).addDisposableTo(bag)
         btnDone.rx.tap.bind(to: viewModel.tapDone).addDisposableTo(bag)
+        itemDate.tfValue.rx.text.bind(to: viewModel.date).addDisposableTo(bag)
+        itemTime.tfValue.rx.text.bind(to: viewModel.time).addDisposableTo(bag)
+        itemLocation.tfValue.rx.text.bind(to: viewModel.location).addDisposableTo(bag)
+        itemAllDay.uiSwitch.rx.isOn.bind(to: viewModel.allday).addDisposableTo(bag)
         
         
         //output

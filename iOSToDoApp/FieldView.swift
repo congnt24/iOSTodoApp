@@ -12,39 +12,48 @@ class FieldView: UIView {
 
     @IBOutlet var fieldView: UIView!
     @IBOutlet weak var image: UIImageView!
-    @IBOutlet weak var textField: UITextField!
-    
+    @IBOutlet weak var textField: AwesomeTextField!
+
     @IBInspectable var myImage: UIImage {
         get {
             return image.image!
         }
-        
-        set(myImage){
+
+        set(myImage) {
             image.image = myImage
         }
     }
-    
+
     @IBInspectable var placeHolder: String {
         get {
             return textField.placeholder!
         }
-        set(placeHolder){
+        set(placeHolder) {
             textField.placeholder = placeHolder
         }
     }
     
+    @IBInspectable var enableDatePicker: Bool = false {
+        didSet {
+            textField.enableDatePicker = true
+        }
+    }
+    
+    @IBInspectable var enableTimePicker: Bool = false {
+        didSet {
+            textField.enableTimePicker = true
+        }
+    }
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         UINib(nibName: "FieldView", bundle: nil).instantiate(withOwner: self, options: nil)
         addSubview(fieldView)
         fieldView.frame = self.bounds
     }
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
     }
-    */
 
 }

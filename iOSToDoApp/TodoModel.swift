@@ -12,5 +12,9 @@ import RealmSwift
 class TodoModel: Object {
     dynamic var title: String?
     dynamic var desc: String?
+    dynamic var date: String?
     dynamic var time: String?
+    dynamic var allDay: Bool = false
+    dynamic var location: String?
+    
 }

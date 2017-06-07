@@ -503,6 +503,7 @@
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="image" keyPath="myImage" value="icon_birthday"/>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="Birthday"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enableDatePicker" value="YES"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qY2-3V-c7W" customClass="FieldView" customModule="iOSToDoApp" customModuleProvider="target">
@@ -570,7 +571,12 @@
                     </view>
                     <connections>
                         <outlet property="back" destination="d8w-Ug-3x4" id="Jxx-jF-Nkl"/>
+                        <outlet property="birthdayField" destination="cOL-kK-rUE" id="N6x-di-alz"/>
                         <outlet property="btnDone" destination="Dh9-QP-Jwn" id="VxT-B2-u5y"/>
+                        <outlet property="emailField" destination="EhI-ZD-zJu" id="l2c-Lb-KT6"/>
+                        <outlet property="genderField" destination="qY2-3V-c7W" id="C3F-XI-pfY"/>
+                        <outlet property="nameField" destination="vHx-gb-hxP" id="Kip-YK-mGb"/>
+                        <outlet property="passwordField" destination="AVS-q5-C6h" id="cJE-r8-5me"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i5V-O3-Lbu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -615,15 +621,15 @@
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zGK-rf-yOz">
                                                 <rect key="frame" x="0.0" y="0.0" width="295" height="49.5"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your description" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eKr-AP-vqk">
                                                 <rect key="frame" x="0.0" y="49.5" width="295" height="49.5"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
                                             </textField>
                                         </subviews>
                                         <constraints>
@@ -662,6 +668,7 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="Select Time"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="value" value="7pm - 9pm"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="Time"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="enableTimePicker" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="osl-5e-mwE" customClass="ItemPickerView" customModule="iOSToDoApp" customModuleProvider="target">
@@ -678,6 +685,7 @@
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="Location"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="value" value="Hanoi"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="Location"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Po1-jZ-pM1" customClass="ItemPickerView" customModule="iOSToDoApp" customModuleProvider="target">
@@ -686,6 +694,7 @@
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="Notification"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="value" value="via SMS"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="Notification"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TY4-XB-Kr5" customClass="ItemPickerView" customModule="iOSToDoApp" customModuleProvider="target">
@@ -694,6 +703,7 @@
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="People"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="value" value="None"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="People"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cHI-Y6-5BV" customClass="ItemPickerView" customModule="iOSToDoApp" customModuleProvider="target">
@@ -702,6 +712,7 @@
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="Repeat"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="value" value="No"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="Repeat"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
