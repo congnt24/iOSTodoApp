@@ -38,6 +38,7 @@ class AddNewViewModel {
             //checking valid data
             //add data to db
             let item = TodoModel()
+            item.email = UserDefaultHandler.loggedEmail
             item.title = self.title.value
             item.desc = self.desc.value
             item.date = self.date.value

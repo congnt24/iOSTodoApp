@@ -19,6 +19,7 @@ class NavViewController: UIViewController {
         super.viewDidLoad()
 
         btnSignout.rx.tap.subscribe(onNext: {
+            UserDefaultHandler.isLogged = false
             self.navigationController?.popToRootViewController(animated: true)
         }).addDisposableTo(bag)
         btnClose.rx.tap.subscribe(onNext: {

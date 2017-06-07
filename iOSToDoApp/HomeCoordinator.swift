@@ -25,7 +25,9 @@ class HomeCoordinator: Coordinator {
         let viewModel = HomeViewModel(delegate: self)
         viewModel.delegate = self
         home.viewModel = viewModel
-        navigation?.pushViewController(home, animated: true)
+        navigation?.popToRootViewController(animated: false)
+        navigation?.setViewControllers([home], animated: false)
+//        navigation?.pushViewController(home, animated: true)
     }
 }
 

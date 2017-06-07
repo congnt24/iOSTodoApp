@@ -12,6 +12,14 @@ import UIKit
 extension UIViewController {
     typealias completion = ((String)->Void)?
     
+    func showMessageDialog(_ title: String, _ message: String) {
+        let dialog = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+        dialog.addAction(ok)
+        present(dialog, animated: true, completion: nil)
+        
+    }
+    
     func showInputDialog(_ title: String, defaultText: String? = nil, label: UILabel?, onCompletion: completion){
         let dialog = UIAlertController(title: "\(title)", message: "Please enter \(title)", preferredStyle: .alert)
         dialog.addTextField { (textField) in

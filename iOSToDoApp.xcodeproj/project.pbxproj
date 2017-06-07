@@ -13,6 +13,10 @@
 		1843AC651EE2551F003811FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1843AC631EE2551F003811FD /* LaunchScreen.storyboard */; };
 		18A45C981EE59F9300B89E98 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A45C971EE59F9300B89E98 /* ViewControllerExtension.swift */; };
 		18CDDE081EE8073300893C20 /* AwesomeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CDDE071EE8073300893C20 /* AwesomeTextField.swift */; };
+		18CDDE0B1EE80ECC00893C20 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CDDE0A1EE80ECC00893C20 /* BaseViewController.swift */; };
+		18CDDE0D1EE814F000893C20 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CDDE0C1EE814F000893C20 /* UserRepository.swift */; };
+		18CDDE0F1EE832FC00893C20 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CDDE0E1EE832FC00893C20 /* UserModel.swift */; };
+		18CDDE111EE84D4900893C20 /* UserDefaultHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CDDE101EE84D4900893C20 /* UserDefaultHandler.swift */; };
 		18DAC6241EE3AB22008DF7BF /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DAC6231EE3AB22008DF7BF /* FieldView.swift */; };
 		18DAC6261EE3AB2E008DF7BF /* FieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DAC6251EE3AB2E008DF7BF /* FieldView.xib */; };
 		18DAC62B1EE3B630008DF7BF /* ItemNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DAC62A1EE3B630008DF7BF /* ItemNavView.swift */; };
@@ -53,6 +57,10 @@
 		1843AC661EE2551F003811FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18A45C971EE59F9300B89E98 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		18CDDE071EE8073300893C20 /* AwesomeTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeTextField.swift; sourceTree = "<group>"; };
+		18CDDE0A1EE80ECC00893C20 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		18CDDE0C1EE814F000893C20 /* UserRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		18CDDE0E1EE832FC00893C20 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		18CDDE101EE84D4900893C20 /* UserDefaultHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultHandler.swift; sourceTree = "<group>"; };
 		18DAC6231EE3AB22008DF7BF /* FieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldView.swift; sourceTree = "<group>"; };
 		18DAC6251EE3AB2E008DF7BF /* FieldView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FieldView.xib; sourceTree = "<group>"; };
 		18DAC62A1EE3B630008DF7BF /* ItemNavView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemNavView.swift; sourceTree = "<group>"; };
@@ -128,6 +136,7 @@
 		1843AC591EE2551F003811FD /* iOSToDoApp */ = {
 			isa = PBXGroup;
 			children = (
+				18CDDE091EE80EAB00893C20 /* Base */,
 				18DAC6641EE58486008DF7BF /* Repository */,
 				18DAC6571EE4566B008DF7BF /* Model */,
 				18DAC64C1EE4215D008DF7BF /* ViewModel */,
@@ -141,6 +150,18 @@
 				1843AC661EE2551F003811FD /* Info.plist */,
 			);
 			path = iOSToDoApp;
+			sourceTree = "<group>";
+		};
+		18CDDE091EE80EAB00893C20 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				18DAC6671EE587E6008DF7BF /* Repository.swift */,
+				18DAC63D1EE4169A008DF7BF /* Coordinator.swift */,
+				18CDDE0A1EE80ECC00893C20 /* BaseViewController.swift */,
+				18A45C971EE59F9300B89E98 /* ViewControllerExtension.swift */,
+				18CDDE101EE84D4900893C20 /* UserDefaultHandler.swift */,
+			);
+			name = Base;
 			sourceTree = "<group>";
 		};
 		18DAC6271EE3B5EF008DF7BF /* CustomViews */ = {
@@ -164,7 +185,6 @@
 		18DAC63C1EE4168A008DF7BF /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				18DAC63D1EE4169A008DF7BF /* Coordinator.swift */,
 				18DAC63F1EE41859008DF7BF /* AppCoordinator.swift */,
 				18DAC6411EE41AC7008DF7BF /* HomeCoordinator.swift */,
 				18DAC6431EE41AD2008DF7BF /* LoginCoordinator.swift */,
@@ -182,7 +202,6 @@
 				18DAC64F1EE435B1008DF7BF /* SignupViewController.swift */,
 				18DAC6531EE437AE008DF7BF /* AddNewViewController.swift */,
 				18DAC6551EE438F2008DF7BF /* NavViewController.swift */,
-				18A45C971EE59F9300B89E98 /* ViewControllerExtension.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -202,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				18DAC6581EE45687008DF7BF /* TodoModel.swift */,
+				18CDDE0E1EE832FC00893C20 /* UserModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -210,7 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				18DAC6651EE58497008DF7BF /* TodoRepository.swift */,
-				18DAC6671EE587E6008DF7BF /* Repository.swift */,
+				18CDDE0C1EE814F000893C20 /* UserRepository.swift */,
 			);
 			name = Repository;
 			sourceTree = "<group>";
@@ -355,15 +375,19 @@
 				18DAC6541EE437AE008DF7BF /* AddNewViewController.swift in Sources */,
 				18DAC63E1EE4169A008DF7BF /* Coordinator.swift in Sources */,
 				18DAC6371EE3E09A008DF7BF /* ItemToDoView.swift in Sources */,
+				18CDDE0F1EE832FC00893C20 /* UserModel.swift in Sources */,
 				18A45C981EE59F9300B89E98 /* ViewControllerExtension.swift in Sources */,
 				18DAC65B1EE456E5008DF7BF /* HomeViewModel.swift in Sources */,
+				18CDDE0B1EE80ECC00893C20 /* BaseViewController.swift in Sources */,
 				18DAC6521EE43609008DF7BF /* SignupViewModel.swift in Sources */,
 				18DAC6561EE438F2008DF7BF /* NavViewController.swift in Sources */,
 				18DAC65E1EE46252008DF7BF /* HomeTableViewCell.swift in Sources */,
 				18DAC6461EE41D51008DF7BF /* SignupCoordinator.swift in Sources */,
+				18CDDE0D1EE814F000893C20 /* UserRepository.swift in Sources */,
 				18DAC64B1EE41FE4008DF7BF /* HomeViewController.swift in Sources */,
 				18DAC6591EE45687008DF7BF /* TodoModel.swift in Sources */,
 				18DAC6441EE41AD2008DF7BF /* LoginCoordinator.swift in Sources */,
+				18CDDE111EE84D4900893C20 /* UserDefaultHandler.swift in Sources */,
 				18DAC6681EE587E6008DF7BF /* Repository.swift in Sources */,
 				18DAC64E1EE4216D008DF7BF /* LoginViewModel.swift in Sources */,
 				18DAC6241EE3AB22008DF7BF /* FieldView.swift in Sources */,

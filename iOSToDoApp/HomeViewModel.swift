@@ -44,7 +44,7 @@ class HomeViewModel {
     func loadData() {
         Observable.collection(from: todoRepo.getAll()).map {
             Array($0)
-        }.asObservable().bind(to: datas).addDisposableTo(bag)
+        }.bind(to: datas).addDisposableTo(bag)
 
     }
 }

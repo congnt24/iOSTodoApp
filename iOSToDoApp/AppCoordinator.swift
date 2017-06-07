@@ -13,7 +13,7 @@ class AppCoordinator: Coordinator {
     override func start() {
         //handle first activity to start
         //check if user is logged
-        if (UserDefaults.standard.value(forKey: "logged") != nil) {
+        if (UserDefaultHandler.isLogged) {
             showHomeCoordinator()
         } else {
             LoginCoordinator(navigation).start()

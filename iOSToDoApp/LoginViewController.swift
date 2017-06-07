@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class LoginViewController: UIViewController {
+class LoginViewController: BaseViewController {
     // MARK: - IBOutlet
     @IBOutlet weak var btnSignIn: UIButton!
     @IBOutlet weak var btnSignUp: UIButton!
@@ -18,8 +18,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var fieldPassword: FieldView!
 
     var viewModel: LoginViewModel!
-    let bag = DisposeBag()
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +39,18 @@ class LoginViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func responseFromViewModel() {
+        viewModel.signinSuccess.asObservable().subscribe(onNext: {
+            if $0 {
+                UserDefaultHandler.isLogged = true
+                UserDefaultHandler.loggedEmail = self.fieldUsername.textField.text
+                self.viewModel.delegate.showHome()
+            } else {
+                self.showMessageDialog("Oops", "Login Failed")
+            }
+        }).addDisposableTo(bag)
     }
 
 }

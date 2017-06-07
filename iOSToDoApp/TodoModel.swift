@@ -10,6 +10,7 @@ import Foundation
 import RealmSwift
 
 class TodoModel: Object {
+    dynamic var email: String?
     dynamic var title: String?
     dynamic var desc: String?
     dynamic var date: String?
