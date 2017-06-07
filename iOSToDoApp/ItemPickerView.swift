@@ -9,11 +9,11 @@
 import UIKit
 
 class ItemPickerView: UIView {
-    
-    
+
+
     @IBOutlet weak var label_title: UILabel!
 
-    @IBOutlet weak var label_value: UILabel!
+    @IBOutlet weak var tfValue: UITextField!
     @IBOutlet weak var uiSwitch: UISwitch!
 
     @IBInspectable var title: String? {
@@ -25,20 +25,33 @@ class ItemPickerView: UIView {
         }
     }
 
-    @IBInspectable var value: String? {
+    @IBInspectable var placeHolder: String? {
         get {
-            return label_value.text
+            return tfValue.placeholder
         }
         set(value) {
-            label_value.text = value
+            tfValue.placeholder = value
+            uiSwitch.isHidden = true
         }
     }
     @IBInspectable var enableSwitch: Bool {
         get {
             return uiSwitch.isHidden
         }
-        set(isHidden){
-            uiSwitch.isHidden = isHidden
+        set(isHidden) {
+            uiSwitch.isHidden = !isHidden
+            if isHidden {
+                tfValue.isHidden = true
+            }
+        }
+    }
+
+    @IBInspectable var enableDatePicker: Bool {
+        get {
+            return true
+        }
+        set(value) {
+            setupDatePicker()
         }
     }
 
@@ -48,27 +61,31 @@ class ItemPickerView: UIView {
         UINib(nibName: "ItemPickerView", bundle: nil).instantiate(withOwner: self, options: nil)
         addSubview(view)
         view.frame = self.bounds
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(showInputDialog(_:)))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(showInputDialog))
         view.addGestureRecognizer(tap)
-//        view.perform(#selector("showInputDialog:"))//error
     }
-    
-    var comp: ((String)->Void)?
-    
-    func showInputDialog(_ sender: UITapGestureRecognizer){
-        viewController?.showInputDialog(title!, defaultText: value, label: label_value, onCompletion: comp)
-//        let dialog = UIAlertController(title: "\(title!)", message: "Please enter \(title!)", preferredStyle: .alert)
-//        dialog.addTextField { (textField) in
-//            textField.placeholder = "\(self.title!)"
-//        }
-//        let ok = UIAlertAction(title: "OK", style: .default) { _ in
-//            self.value = dialog.textFields?[0].text
-//        }
-//        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-//        dialog.addAction(ok)
-//        dialog.addAction(cancel)
-//        viewController?.present(dialog, animated: true, completion: nil)
+
+    var comp: ((String) -> Void)?
+
+    func showInputDialog() {
+        if !enableSwitch {
+            uiSwitch.isOn = !uiSwitch.isOn
+        } else {
+//            viewController?.showInputDialog(title!, defaultText: value, label: label_value, onCompletion: comp)
+            tfValue.becomeFirstResponder()
+        }
+    }
+
+    func setupDatePicker() {
+        let datePicker = UIDatePicker()
+        datePicker.addTarget(self, action: #selector(onDateChange(sender:)), for: UIControlEvents.valueChanged)
+        tfValue.inputView = datePicker
+    }
+
+    func onDateChange(sender: UIDatePicker) {
+        let dateFormater = DateFormatter()
+        dateFormater.setLocalizedDateFormatFromTemplate("yMMMMd")
+        tfValue.text = dateFormater.string(from: sender.date)
     }
 
 }

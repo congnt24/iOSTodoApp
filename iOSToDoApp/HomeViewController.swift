@@ -27,14 +27,16 @@ class HomeViewController: UIViewController, UITableViewDelegate {
         print("on did load")
         let date = Date()
         let dateFormater = DateFormatter()
-        var calendar = Calendar.current
-        calendar.locale = Locale(identifier: "en_US")
-        dateFormater.locale = Locale(identifier: "en_US")
-        dateFormater.setLocalizedDateFormatFromTemplate("MMMMd")
+//        var calendar = Calendar.current
+//        calendar.locale = Locale(identifier: "en_US")
+//        dateFormater.locale = Locale(identifier: "en_US")
+        dateFormater.setLocalizedDateFormatFromTemplate("yMMMMd")
         let dateStr = dateFormater.string(from: date)
-        let month = dateFormater.calendar.component(.month, from: date)
+        dateFormater.setLocalizedDateFormatFromTemplate("MMMM")
+        let month = dateFormater.string(from: date)
+//        let month = dateFormater.calendar.component(.month, from: date)
         lblDate.text = dateStr
-        lblDay.text = DateFormatter().monthSymbols[month - 1]
+        lblDay.text = month//DateFormatter().monthSymbols[month - 1]
         btnAdd.rx.tap.bind(to: viewModel.addNew).addDisposableTo(bag)
         setupTableView()
     }

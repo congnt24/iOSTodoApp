@@ -8,40 +8,47 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 import RealmSwift
 
 class AddNewViewModel {
     var delegate: AddNewCoordinatorDelegate!
     //input
-    var title: String?
-    var desc: String?
+    var title = Variable<String?>(nil)
+    var desc = Variable<String?>(nil)
     var date: String?
 
     var tapDone = PublishSubject<Void>()
     //output
+    
+    var canDone: Driver<Bool>
+    
     //
     let bag = DisposeBag()
     init() {
+        canDone = Observable.combineLatest(title.asObservable(), desc.asObservable()) {
+            return $0!.characters.count > 0 && $1!.characters.count > 0
+        }.asDriver(onErrorJustReturn: false)
+        
+        
         let realm = try! Realm()
         tapDone.asObserver().subscribe(onNext: {
             //checking valid data
-            if !existNil(strs: self.title, self.desc, self.date) {
-                //add data to db
-                let item = TodoModel()
-                item.title = self.title
-                item.desc = self.desc
-                item.time = self.date
-                try! realm.write {
-                    realm.add(item)
-                }
-                //back to main coordinator
-                self.delegate.backToHomeAndReload()
+            //add data to db
+            let item = TodoModel()
+            item.title = self.title.value
+            item.desc = self.desc.value
+            try! realm.write {
+                realm.add(item)
             }
+            //back to main coordinator
+            self.delegate.backToHomeAndReload()
+
         }).addDisposableTo(bag)
     }
 }
 
-func existNil(strs: String?...) -> Bool{
+func existNil(strs: String?...) -> Bool {
     for str in strs {
         if str == nil {
             return true

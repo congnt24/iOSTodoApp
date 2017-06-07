@@ -9,13 +9,14 @@
 import UIKit
 import RxSwift
 import RxCocoa
+
 class AddNewViewController: UIViewController {
 
     @IBOutlet weak var btnDone: UIBarButtonItem!
     @IBOutlet weak var btnClose: UIBarButtonItem!
     
-    @IBOutlet weak var labelTitle: UILabel!
-    @IBOutlet weak var labelDesc: UILabel!
+    @IBOutlet weak var tfTitle: UITextField!
+    @IBOutlet weak var tfDesc: UITextField!
     @IBOutlet weak var itemDate: ItemPickerView!
     
     @IBOutlet weak var itemTime: ItemPickerView!
@@ -37,27 +38,23 @@ class AddNewViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setupRx()
-        btnClose.rx.tap.subscribe(onNext: {
-            self.navigationController?.popViewController(animated: true)
-        }).addDisposableTo(bag)
-        btnDone.rx.tap.bind(to: viewModel.tapDone).addDisposableTo(bag)
         
     }
     
     func setupRx(){
-        labelDesc.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(AddNewViewController.showDialogDesc)))
-        labelTitle.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(AddNewViewController.showDialogTitle)))
-        itemDate.comp = { self.viewModel.date = $0 }
-    }
-    
-    func showDialogTitle(){
-        showInputDialog("Title", label: labelTitle){
-            self.viewModel.title = $0
-        }
-    }
-    func showDialogDesc(){
-        showInputDialog("Description", label: labelDesc) {
-            self.viewModel.desc = $0
-        }
+        //bind textfield to viewmodel
+        //input
+        btnClose.rx.tap.subscribe(onNext: {
+            self.navigationController?.popViewController(animated: true)
+        }).addDisposableTo(bag)
+        tfTitle.rx.text.bind(to: viewModel.title).addDisposableTo(bag)
+        tfDesc.rx.text.bind(to: viewModel.desc).addDisposableTo(bag)
+        btnDone.rx.tap.bind(to: viewModel.tapDone).addDisposableTo(bag)
+        
+        
+        //output
+        viewModel.canDone.drive(onNext: {
+            self.btnDone.isEnabled = $0
+        }).addDisposableTo(bag)
     }
 }

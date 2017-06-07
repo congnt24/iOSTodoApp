@@ -590,7 +590,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y9E-ax-3Zb">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="179.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="179"/>
                                 <subviews>
                                     <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKT-ez-LgG">
                                         <rect key="frame" x="0.0" y="16" width="320" height="44"/>
@@ -610,50 +610,40 @@
                                             </navigationItem>
                                         </items>
                                     </navigationBar>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ipp-OY-X7n">
-                                        <rect key="frame" x="16" y="70" width="288" height="99.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="UfR-h1-6cK">
+                                        <rect key="frame" x="12.5" y="70" width="295" height="99"/>
                                         <subviews>
-                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hrl-qb-keo">
-                                                <rect key="frame" x="0.0" y="0.0" width="288" height="42"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="42" id="W3r-G7-qZI"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Um-gs-sIw">
-                                                <rect key="frame" x="0.0" y="42" width="288" height="57.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zGK-rf-yOz">
+                                                <rect key="frame" x="0.0" y="0.0" width="295" height="49.5"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your description" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eKr-AP-vqk">
+                                                <rect key="frame" x="0.0" y="49.5" width="295" height="49.5"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="Hrl-qb-keo" firstAttribute="top" secondItem="Ipp-OY-X7n" secondAttribute="top" id="BEr-nm-MHn"/>
-                                            <constraint firstAttribute="bottom" secondItem="9Um-gs-sIw" secondAttribute="bottom" id="Iqv-P3-vSV"/>
-                                            <constraint firstAttribute="trailing" secondItem="Hrl-qb-keo" secondAttribute="trailing" id="dGS-CE-p0Y"/>
-                                            <constraint firstAttribute="trailing" secondItem="9Um-gs-sIw" secondAttribute="trailing" id="f9G-7O-WRp"/>
-                                            <constraint firstItem="9Um-gs-sIw" firstAttribute="leading" secondItem="Ipp-OY-X7n" secondAttribute="leading" id="g0K-oq-Fmw"/>
-                                            <constraint firstItem="9Um-gs-sIw" firstAttribute="top" secondItem="Hrl-qb-keo" secondAttribute="bottom" id="kmK-z3-3bt"/>
-                                            <constraint firstItem="Hrl-qb-keo" firstAttribute="leading" secondItem="Ipp-OY-X7n" secondAttribute="leading" id="pjJ-Zo-ACg"/>
+                                            <constraint firstAttribute="width" secondItem="UfR-h1-6cK" secondAttribute="height" multiplier="300:101" id="DyQ-0p-rn9"/>
                                         </constraints>
-                                    </view>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.72886490820000005" green="0.4685695171" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="Ipp-OY-X7n" firstAttribute="leading" secondItem="Y9E-ax-3Zb" secondAttribute="leading" constant="16" id="457-AR-Lbz"/>
+                                    <constraint firstAttribute="bottom" secondItem="UfR-h1-6cK" secondAttribute="bottom" constant="10" id="EAa-lI-Dr4"/>
+                                    <constraint firstItem="UfR-h1-6cK" firstAttribute="top" secondItem="nKT-ez-LgG" secondAttribute="bottom" constant="10" id="Fbk-Ul-DV9"/>
                                     <constraint firstItem="nKT-ez-LgG" firstAttribute="leading" secondItem="Y9E-ax-3Zb" secondAttribute="leading" id="JTt-b7-YZ1"/>
-                                    <constraint firstItem="Ipp-OY-X7n" firstAttribute="top" secondItem="nKT-ez-LgG" secondAttribute="bottom" constant="10" id="TNP-mU-fKK"/>
-                                    <constraint firstAttribute="bottom" secondItem="Ipp-OY-X7n" secondAttribute="bottom" constant="10" id="XND-cw-bVB"/>
                                     <constraint firstAttribute="width" secondItem="Y9E-ax-3Zb" secondAttribute="height" multiplier="25:14" id="Z4q-xU-K75"/>
+                                    <constraint firstItem="UfR-h1-6cK" firstAttribute="centerX" secondItem="Y9E-ax-3Zb" secondAttribute="centerX" id="a8l-uW-Yv7"/>
                                     <constraint firstAttribute="trailing" secondItem="nKT-ez-LgG" secondAttribute="trailing" id="nUM-vD-M7l"/>
-                                    <constraint firstAttribute="trailing" secondItem="Ipp-OY-X7n" secondAttribute="trailing" constant="16" id="nsH-aT-H5Y"/>
                                     <constraint firstItem="nKT-ez-LgG" firstAttribute="top" secondItem="Y9E-ax-3Zb" secondAttribute="top" constant="16" id="q8a-57-lmo"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="4Cn-Tt-4gb">
-                                <rect key="frame" x="10" y="189.5" width="300" height="355"/>
+                                <rect key="frame" x="10" y="189" width="300" height="355"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Is-Nn-q6N" customClass="ItemPickerView" customModule="iOSToDoApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="50.5"/>
@@ -661,7 +651,8 @@
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="Select Date"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="value" value="Feb 2, 2017"/>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="enableSwitch" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="Date"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="enableDatePicker" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yba-H3-V1C" customClass="ItemPickerView" customModule="iOSToDoApp" customModuleProvider="target">
@@ -670,6 +661,7 @@
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="Select Time"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="value" value="7pm - 9pm"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="Time"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="osl-5e-mwE" customClass="ItemPickerView" customModule="iOSToDoApp" customModuleProvider="target">
@@ -677,7 +669,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="All Day"/>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="enableSwitch" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="enableSwitch" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9mP-a4-G6N" customClass="ItemPickerView" customModule="iOSToDoApp" customModuleProvider="target">
@@ -738,8 +730,8 @@
                         <outlet property="itemPeople" destination="TY4-XB-Kr5" id="LeV-tE-2GY"/>
                         <outlet property="itemRepeat" destination="cHI-Y6-5BV" id="3F3-pQ-cuQ"/>
                         <outlet property="itemTime" destination="Yba-H3-V1C" id="ncL-zB-Ogx"/>
-                        <outlet property="labelDesc" destination="9Um-gs-sIw" id="dlk-pw-ZA3"/>
-                        <outlet property="labelTitle" destination="Hrl-qb-keo" id="DwH-eb-q21"/>
+                        <outlet property="tfDesc" destination="eKr-AP-vqk" id="KF3-mt-me4"/>
+                        <outlet property="tfTitle" destination="zGK-rf-yOz" id="n8F-lx-0T7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fSp-ld-K1x" userLabel="First Responder" sceneMemberID="firstResponder"/>
