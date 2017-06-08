@@ -73,7 +73,7 @@ class ItemPickerView: UIView {
 
     func showInputDialog() {
         if !enableSwitch {
-            uiSwitch.isOn = !uiSwitch.isOn
+            uiSwitch.setOn(!uiSwitch.isOn, animated: true)
         } else {
 //            viewController?.showInputDialog(title!, defaultText: value, label: label_value, onCompletion: comp)
             tfValue.becomeFirstResponder()

@@ -438,12 +438,6 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PbD-3I-5Su">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="213.5"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_camera" translatesAutoresizingMaskIntoConstraints="NO" id="Y0d-Yg-jLA">
-                                                        <rect key="frame" x="135.5" y="120" width="49" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" secondItem="Y0d-Yg-jLA" secondAttribute="height" multiplier="49:50" id="80T-Qn-Cv7"/>
-                                                        </constraints>
-                                                    </imageView>
                                                     <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ph-AX-PHS">
                                                         <rect key="frame" x="0.0" y="16" width="320" height="44"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -460,12 +454,23 @@
                                                             </navigationItem>
                                                         </items>
                                                     </navigationBar>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AD9-VU-HAB">
+                                                        <rect key="frame" x="128" y="75" width="64" height="64"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="64" id="a90-mC-XFJ"/>
+                                                            <constraint firstAttribute="width" constant="64" id="dXR-5w-4wa"/>
+                                                        </constraints>
+                                                        <state key="normal" image="icon_camera"/>
+                                                        <connections>
+                                                            <action selector="onClickCamera:" destination="aLC-5L-OSW" eventType="touchUpInside" id="81e-Ga-9Qg"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.72941176470588232" green="0.46666666666666667" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstItem="Y0d-Yg-jLA" firstAttribute="top" secondItem="PbD-3I-5Su" secondAttribute="top" constant="120" id="06X-tk-P1Q"/>
+                                                    <constraint firstItem="AD9-VU-HAB" firstAttribute="centerY" secondItem="PbD-3I-5Su" secondAttribute="centerY" id="KrQ-16-iTN"/>
                                                     <constraint firstAttribute="width" secondItem="PbD-3I-5Su" secondAttribute="height" multiplier="3:2" id="m0s-jZ-9yU"/>
-                                                    <constraint firstItem="Y0d-Yg-jLA" firstAttribute="centerX" secondItem="PbD-3I-5Su" secondAttribute="centerX" id="oou-GW-xLk"/>
+                                                    <constraint firstItem="AD9-VU-HAB" firstAttribute="centerX" secondItem="PbD-3I-5Su" secondAttribute="centerX" id="ulr-PY-Kem"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="se2-c0-2gb">
@@ -573,6 +578,7 @@
                     <connections>
                         <outlet property="back" destination="d8w-Ug-3x4" id="Jxx-jF-Nkl"/>
                         <outlet property="birthdayField" destination="cOL-kK-rUE" id="N6x-di-alz"/>
+                        <outlet property="btnCamera" destination="AD9-VU-HAB" id="Zae-DB-Ux1"/>
                         <outlet property="btnDone" destination="Dh9-QP-Jwn" id="VxT-B2-u5y"/>
                         <outlet property="emailField" destination="EhI-ZD-zJu" id="l2c-Lb-KT6"/>
                         <outlet property="genderField" destination="qY2-3V-c7W" id="C3F-XI-pfY"/>
@@ -582,7 +588,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i5V-O3-Lbu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1733" y="-1192"/>
+            <point key="canvasLocation" x="1732.5" y="-1192.605633802817"/>
         </scene>
         <!--AddNew-->
         <scene sceneID="8eI-O9-T9J">
@@ -649,87 +655,98 @@
                                     <constraint firstItem="nKT-ez-LgG" firstAttribute="top" secondItem="Y9E-ax-3Zb" secondAttribute="top" constant="16" id="q8a-57-lmo"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="4Cn-Tt-4gb">
-                                <rect key="frame" x="10" y="189" width="300" height="355"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XMd-F1-vC0">
+                                <rect key="frame" x="0.0" y="179" width="320" height="389"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Is-Nn-q6N" customClass="ItemPickerView" customModule="iOSToDoApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="50.5"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Select Date"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="value" value="Feb 2, 2017"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="Date"/>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="enableDatePicker" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yba-H3-V1C" customClass="ItemPickerView" customModule="iOSToDoApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50.5" width="300" height="51"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Select Time"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="value" value="7pm - 9pm"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="Time"/>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="enableTimePicker" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="osl-5e-mwE" customClass="ItemPickerView" customModule="iOSToDoApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="101.5" width="300" height="50.5"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="All Day"/>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="enableSwitch" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9mP-a4-G6N" customClass="ItemPickerView" customModule="iOSToDoApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="152" width="300" height="51"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Location"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="value" value="Hanoi"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="Location"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Po1-jZ-pM1" customClass="ItemPickerView" customModule="iOSToDoApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="203" width="300" height="50.5"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Notification"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="value" value="via SMS"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="Notification"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TY4-XB-Kr5" customClass="ItemPickerView" customModule="iOSToDoApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="253.5" width="300" height="51"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="People"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="value" value="None"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="People"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cHI-Y6-5BV" customClass="ItemPickerView" customModule="iOSToDoApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="304.5" width="300" height="50.5"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Repeat"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="value" value="No"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="Repeat"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="4Cn-Tt-4gb">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="389"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Is-Nn-q6N" customClass="ItemPickerView" customModule="iOSToDoApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="55.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Select Date"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="value" value="Feb 2, 2017"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="Date"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enableDatePicker" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yba-H3-V1C" customClass="ItemPickerView" customModule="iOSToDoApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="55.5" width="320" height="55.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Select Time"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="value" value="7pm - 9pm"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="Time"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enableTimePicker" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="osl-5e-mwE" customClass="ItemPickerView" customModule="iOSToDoApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="111" width="320" height="55.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="All Day"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enableSwitch" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9mP-a4-G6N" customClass="ItemPickerView" customModule="iOSToDoApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="166.5" width="320" height="56"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Location"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="value" value="Hanoi"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="Location"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Po1-jZ-pM1" customClass="ItemPickerView" customModule="iOSToDoApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="222.5" width="320" height="55.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Notification"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="value" value="via SMS"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="Notification"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TY4-XB-Kr5" customClass="ItemPickerView" customModule="iOSToDoApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="278" width="320" height="55.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="People"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="value" value="None"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="People"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cHI-Y6-5BV" customClass="ItemPickerView" customModule="iOSToDoApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="333.5" width="320" height="55.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Repeat"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="value" value="No"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="Repeat"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="4Cn-Tt-4gb" secondAttribute="height" multiplier="71:84" id="kFL-sw-TPB"/>
+                                    <constraint firstAttribute="trailing" secondItem="4Cn-Tt-4gb" secondAttribute="trailing" id="6W8-4U-trk"/>
+                                    <constraint firstItem="4Cn-Tt-4gb" firstAttribute="top" secondItem="XMd-F1-vC0" secondAttribute="top" id="6aH-XS-jFm"/>
+                                    <constraint firstItem="4Cn-Tt-4gb" firstAttribute="leading" secondItem="XMd-F1-vC0" secondAttribute="leading" id="7lk-ml-TO5"/>
+                                    <constraint firstAttribute="bottom" secondItem="4Cn-Tt-4gb" secondAttribute="bottom" id="ffo-Bw-Tb1"/>
+                                    <constraint firstItem="4Cn-Tt-4gb" firstAttribute="height" secondItem="XMd-F1-vC0" secondAttribute="height" id="xmH-o6-of6"/>
                                 </constraints>
-                            </stackView>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="4Cn-Tt-4gb" firstAttribute="leading" secondItem="H3g-Jk-y59" secondAttribute="leading" constant="10" id="2oZ-GD-f18"/>
                             <constraint firstItem="Y9E-ax-3Zb" firstAttribute="leading" secondItem="H3g-Jk-y59" secondAttribute="leading" id="BRo-c5-01P"/>
-                            <constraint firstItem="4Cn-Tt-4gb" firstAttribute="top" secondItem="Y9E-ax-3Zb" secondAttribute="bottom" constant="10" id="LSZ-GB-DGC"/>
+                            <constraint firstItem="XMd-F1-vC0" firstAttribute="top" secondItem="Y9E-ax-3Zb" secondAttribute="bottom" id="Hdt-mL-dpZ"/>
+                            <constraint firstItem="XMd-F1-vC0" firstAttribute="leading" secondItem="H3g-Jk-y59" secondAttribute="leading" id="JfR-81-UhY"/>
                             <constraint firstItem="Y9E-ax-3Zb" firstAttribute="top" secondItem="H3g-Jk-y59" secondAttribute="top" id="Ufv-nW-vYN"/>
-                            <constraint firstAttribute="trailing" secondItem="4Cn-Tt-4gb" secondAttribute="trailing" constant="10" id="YCq-Ee-0N1"/>
                             <constraint firstAttribute="trailing" secondItem="Y9E-ax-3Zb" secondAttribute="trailing" id="eqa-z0-5q8"/>
+                            <constraint firstItem="w1r-As-W4b" firstAttribute="top" secondItem="XMd-F1-vC0" secondAttribute="bottom" id="sTd-Sp-Uvl"/>
+                            <constraint firstItem="4Cn-Tt-4gb" firstAttribute="width" secondItem="H3g-Jk-y59" secondAttribute="width" id="stP-08-yfF"/>
+                            <constraint firstAttribute="trailing" secondItem="XMd-F1-vC0" secondAttribute="trailing" id="tMz-8P-efV"/>
                         </constraints>
                     </view>
                     <connections>
