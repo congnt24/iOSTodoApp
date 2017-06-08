@@ -14,11 +14,12 @@ protocol AddNewCoordinatorDelegate {
 }
 
 class AddNewCoordinator: Coordinator {
-    override func start() {
+    override func start(_ data: Any?) {
         let addNew = mainStoryboard.instantiateViewController(withIdentifier: "addnew") as! AddNewViewController
         let viewModel = AddNewViewModel()
         viewModel.delegate = self
         addNew.viewModel = viewModel
+        addNew.data = data
         navigation?.pushViewController(addNew, animated: true)
     }
 }

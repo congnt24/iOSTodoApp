@@ -10,6 +10,7 @@ import Foundation
 import RealmSwift
 
 class TodoModel: Object {
+    dynamic var todoId = UUID().uuidString
     dynamic var email: String?
     dynamic var title: String?
     dynamic var desc: String?
@@ -18,4 +19,7 @@ class TodoModel: Object {
     dynamic var allDay: Bool = false
     dynamic var location: String?
     
+    override class func primaryKey() -> String? {
+        return "todoId"
+    }
 }

@@ -14,10 +14,10 @@ protocol DidFinishHomCoordinator {
 }
 protocol HomeCoordinatorDelegate {
     func showAddNew()
-
+    func showAddNewUpdate(data: Any?)
 }
 class HomeCoordinator: Coordinator {
-    override func start() {
+    override func start(_ data: Any?) {
         let home = mainStoryboard.instantiateViewController(withIdentifier: "home") as! HomeViewController
         //create and assign view model
         //create and assign delegate = self
@@ -27,14 +27,17 @@ class HomeCoordinator: Coordinator {
         home.viewModel = viewModel
         navigation?.popToRootViewController(animated: false)
         navigation?.setViewControllers([home], animated: false)
-//        navigation?.pushViewController(home, animated: true)
+        //        navigation?.pushViewController(home, animated: true)
     }
 }
 
 //extension delegate
 extension HomeCoordinator: HomeCoordinatorDelegate {
     func showAddNew() {
-        AddNewCoordinator(navigation).start()
+        AddNewCoordinator(navigation).start(nil)
+    }
+    func showAddNewUpdate(data: Any?) {
+        AddNewCoordinator(navigation).start(data)
     }
 }
 

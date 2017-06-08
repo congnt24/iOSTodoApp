@@ -32,16 +32,38 @@ class AddNewViewController: UIViewController {
     
     
     var viewModel: AddNewViewModel!
+    var data: Any?
 
     let bag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setupRx()
-        
     }
     
+    //MARK: - Bind data functions
+    
+    func bindDefaultData(){
+        //bind default data
+        if (data != nil) {
+            let model = data as! TodoModel
+            tfTitle.text = model.title
+            tfDesc.text = model.desc
+            itemDate.tfValue.text = model.date
+            itemTime.tfValue.text = model.time
+//            itemPeople.tfValue.text = model.
+            itemAllDay.uiSwitch.isOn = model.allDay
+            itemLocation.tfValue.text = model.location
+//            itemRepeat.tfValue.text = model.repea
+            
+            self.viewModel.todoId = model.todoId
+            self.viewModel.isUpdate = true
+        }
+    }
+
     func setupRx(){
+        //must bind data before bind rx
+        bindDefaultData()
         //bind textfield to viewmodel
         //input
         btnClose.rx.tap.subscribe(onNext: {
@@ -55,10 +77,10 @@ class AddNewViewController: UIViewController {
         itemLocation.tfValue.rx.text.bind(to: viewModel.location).addDisposableTo(bag)
         itemAllDay.uiSwitch.rx.isOn.bind(to: viewModel.allday).addDisposableTo(bag)
         
-        
         //output
         viewModel.canDone.drive(onNext: {
             self.btnDone.isEnabled = $0
         }).addDisposableTo(bag)
+        
     }
 }

@@ -18,20 +18,20 @@ protocol LoginCoordinatorDelegate {
 }
 
 class LoginCoordinator: Coordinator {
-    override func start() {
+    override func start(_ data: Any?) {
         let login = mainStoryboard.instantiateViewController(withIdentifier: "login") as! LoginViewController
         let viewModel = LoginViewModel()
         viewModel.delegate = self
         login.viewModel = viewModel
-        navigation?.pushViewController(login, animated: true)
+        navigation?.setViewControllers([login], animated: true)
     }
 }
 
 extension LoginCoordinator: LoginCoordinatorDelegate {
     func showHome() {
-        HomeCoordinator(navigation).start()
+        HomeCoordinator(navigation).start(nil)
     }
     func showSignup() {
-        SignupCoordinator(navigation).start()
+        SignupCoordinator(navigation).start(nil)
     }
 }

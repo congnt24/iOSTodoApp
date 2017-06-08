@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigation = UINavigationController()
         navigation.navigationBar.isHidden = true
         let appCoor = AppCoordinator(navigation, window)
-        appCoor.start()
+        appCoor.start(nil)
         window?.rootViewController = navigation
         return true
     }

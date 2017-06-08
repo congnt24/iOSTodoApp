@@ -21,7 +21,7 @@ class Coordinator {
         self.navigation = navigation
     }
 
-    func start() {
-
+    func start(_ data: Any? = nil) {
+        
     }
 }

@@ -16,7 +16,8 @@ class HomeViewModel {
     var delegate: HomeCoordinatorDelegate
     //input
     var addNew = Variable<Void>()
-    var deleteItem = Variable<IndexPath>(IndexPath(row: 0, section: 0))
+    var deleteItem = Variable<IndexPath?>(nil)
+    var selectedItem = Variable<IndexPath?>(nil)
     //output
     var datas = Variable<[TodoModel]>([])
 //    var datas2: Driver<[TodoModel]>
@@ -30,11 +31,16 @@ class HomeViewModel {
         loadData()
         setupRx()
     }
-
+    
     func setupRx() {
         //handle remove item
-        deleteItem.asObservable().skip(1).subscribe(onNext: {
-            self.todoRepo.delete(self.datas.value[$0.item])
+        selectedItem.asObservable().filter({ $0 != nil }).subscribe(onNext: { (ip) in
+            //open addnew for editing
+            self.delegate.showAddNewUpdate(data: self.datas.value[(ip?.item)!])
+        }).addDisposableTo(bag)
+        
+        deleteItem.asObservable().filter({ $0 != nil }).subscribe(onNext: {
+            self.todoRepo.delete(self.datas.value[$0!.item])
         }).addDisposableTo(bag)
         addNew.asObservable().skip(1).subscribe(onNext: {
             self.delegate.showAddNew()

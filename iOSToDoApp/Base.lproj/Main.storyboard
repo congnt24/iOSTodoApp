@@ -406,6 +406,7 @@
                     </view>
                     <connections>
                         <outlet property="btnAdd" destination="qq6-cu-d1W" id="ffX-s0-imU"/>
+                        <outlet property="itemNavigation" destination="HML-iy-ENh" id="f3m-Sv-MWa"/>
                         <outlet property="lblDate" destination="8Pf-hh-cFj" id="PBG-cS-NzX"/>
                         <outlet property="lblDay" destination="jZb-Ni-k6x" id="rg6-Xn-rLo"/>
                         <outlet property="rightBar" destination="5SO-sl-IAi" id="JaJ-ir-r8h"/>

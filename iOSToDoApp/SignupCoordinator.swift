@@ -14,7 +14,7 @@ protocol SignupCoordinatorDelegate {
 }
 
 class SignupCoordinator: Coordinator {
-    override func start() {
+    override func start(_ data: Any?) {
         let signup = mainStoryboard.instantiateViewController(withIdentifier: "signup") as! SignupViewController
         let viewModel = SignupViewModel()
         viewModel.delegate = self
@@ -25,6 +25,6 @@ class SignupCoordinator: Coordinator {
 
 extension SignupCoordinator: SignupCoordinatorDelegate {
     func showHome() {
-        HomeCoordinator(navigation).start()
+        HomeCoordinator(navigation).start(nil)
     }
 }
