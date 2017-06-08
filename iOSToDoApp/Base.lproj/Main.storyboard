@@ -473,7 +473,7 @@
                                                     <constraint firstItem="AD9-VU-HAB" firstAttribute="centerX" secondItem="PbD-3I-5Su" secondAttribute="centerX" id="ulr-PY-Kem"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="se2-c0-2gb">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="se2-c0-2gb" customClass="IQPreviousNextView" customModule="IQKeyboardManagerSwift">
                                                 <rect key="frame" x="0.0" y="213.5" width="320" height="354.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="j4d-U2-YyU">
@@ -598,7 +598,7 @@
                         <viewControllerLayoutGuide type="top" id="ATF-sI-2z5"/>
                         <viewControllerLayoutGuide type="bottom" id="w1r-As-W4b"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="H3g-Jk-y59">
+                    <view key="view" contentMode="scaleToFill" id="H3g-Jk-y59" customClass="IQPreviousNextView" customModule="IQKeyboardManagerSwift">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

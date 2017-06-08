@@ -20,9 +20,10 @@ class SignupViewController: BaseViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var genderField: FieldView!
     @IBOutlet weak var btnCamera: UIButton!
     
+    //MARK: - handle camera
     @IBAction func onClickCamera(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
-            var imagePicker = UIImagePickerController()
+            let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
             imagePicker.allowsEditing = false
@@ -31,7 +32,6 @@ class SignupViewController: BaseViewController, UIImagePickerControllerDelegate,
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        print("run here")
         btnCamera.setImage(info[UIImagePickerControllerOriginalImage] as? UIImage, for: UIControlState.normal)
         dismiss(animated: true, completion: nil)
     }
