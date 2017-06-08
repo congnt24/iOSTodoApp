@@ -10,20 +10,49 @@ import Foundation
 import RealmSwift
 
 class Repository<T: Object> {
+    let TAG = "Realm Error with operation: "
     var realm: Realm
     init() {
         realm = try! Realm()
     }
-    
-    func getAll() -> Results<T>{
+
+    func getAll() -> Results<T> {
         return realm.objects(T.self)
     }
-    
-}
-protocol RepositoryDelegate {
-    associatedtype T: Object
-    
-    func add(_ t: T)
-    func delete(_ t: T)
-    func update(_ t: T)
+
+    open func add(_ t: T) -> Bool {
+        do {
+            try realm.write {
+                realm.add(t)
+            }
+            return true
+        } catch {
+            print("\(TAG) add(\(t))")
+            return false
+        }
+    }
+
+    open func delete(_ t: T) -> Bool {
+        do {
+            try realm.write {
+                realm.delete(t)
+            }
+            return true
+        } catch {
+            print("\(TAG) delete(\(t))")
+            return false
+        }
+    }
+
+    open func update(_ t: T) -> Bool {
+        do {
+            try realm.write {
+                realm.add(t, update: true)
+            }
+            return true
+        } catch {
+            print("\(TAG) update(\(t))")
+            return false
+        }
+    }
 }

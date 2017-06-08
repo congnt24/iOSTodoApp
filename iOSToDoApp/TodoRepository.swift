@@ -10,24 +10,8 @@ import Foundation
 import RealmSwift
 import RxRealm
 
-class TodoRepository: Repository<TodoModel>, RepositoryDelegate {
-    typealias T = TodoModel
-
-    func add(_ t: TodoModel) {
-        try! realm.write {
-            realm.add(t)
-        }
-    }
-    
-    func delete(_ t: TodoModel) {
-        try! realm.write {
-            realm.delete(t)
-        }
-    }
-    
-    func update(_ t: TodoModel) {
-        try! realm.write {
-            realm.add(t, update: true)
-        }
+class TodoRepository: Repository<TodoModel> {
+    override func getAll() -> Results<TodoModel> {
+        return super.getAll().filter(NSPredicate(format: "email == %@", UserDefaultHandler.loggedEmail!))
     }
 }
